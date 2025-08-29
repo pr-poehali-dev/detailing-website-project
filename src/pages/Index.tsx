@@ -70,9 +70,18 @@ const Index = () => {
       <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon name="Car" className="h-8 w-8 text-primary" />
-              <span className="font-montserrat font-bold text-2xl">PREMIUM AUTO</span>
+            <div className="flex items-center space-x-3">
+              <div className="relative w-12 h-12 rounded-full bg-white p-2 shadow-lg">
+                <img 
+                  src="https://cdn.poehali.dev/files/39d55219-fa21-47d8-ba11-45e1d4830dc2.jpeg" 
+                  alt="EX Excellence Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-montserrat font-bold text-xl leading-none">EX</span>
+                <span className="font-montserrat font-medium text-sm text-primary leading-none">EXCELLENCE</span>
+              </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#services" className="font-open-sans hover:text-primary transition-colors">Услуги</a>
@@ -453,9 +462,18 @@ const Index = () => {
       <footer className="border-t border-border/40 py-8 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Car" className="h-6 w-6 text-primary" />
-              <span className="font-montserrat font-bold text-xl">PREMIUM AUTO</span>
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <div className="relative w-8 h-8 rounded-full bg-white p-1 shadow-md">
+                <img 
+                  src="https://cdn.poehali.dev/files/39d55219-fa21-47d8-ba11-45e1d4830dc2.jpeg" 
+                  alt="EX Excellence Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-montserrat font-bold text-lg leading-none">EX</span>
+                <span className="font-montserrat font-medium text-xs text-primary leading-none">EXCELLENCE</span>
+              </div>
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
