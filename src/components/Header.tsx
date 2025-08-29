@@ -7,16 +7,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="relative w-12 h-12 rounded-full bg-white p-2 shadow-lg">
-              <img 
-                src="https://cdn.poehali.dev/files/39d55219-fa21-47d8-ba11-45e1d4830dc2.jpeg" 
-                alt="EX Excellence Logo" 
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center shadow-lg">
+              <Icon name="Car" className="h-6 w-6 text-black" />
             </div>
             <div className="flex flex-col">
-              <span className="font-montserrat font-bold text-xl leading-none">EX</span>
-              <span className="font-montserrat font-medium text-sm text-primary leading-none">EXCELLENCE</span>
+              <span className="font-montserrat font-bold text-xl leading-none text-white">PREMIUM</span>
+              <span className="font-montserrat font-medium text-sm text-gold-500 leading-none">AUTO DETAILING</span>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-8">
@@ -25,7 +21,7 @@ const Header = () => {
             <a href="#gallery" className="font-open-sans hover:text-primary transition-colors">Галерея</a>
             <a href="#contact" className="font-open-sans hover:text-primary transition-colors">Контакты</a>
           </div>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-montserrat font-semibold">
+          <Button className="bg-gold-500 hover:bg-gold-600 text-black font-montserrat font-semibold">
             <Icon name="Phone" className="h-4 w-4 mr-2" />
             Записаться
           </Button>

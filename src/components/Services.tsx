@@ -7,46 +7,52 @@ import Icon from '@/components/ui/icon';
 const Services = () => {
   const services = [
     {
-      title: 'Полная мойка и детейлинг',
-      description: 'Комплексная очистка кузова, дисков, интерьера с применением премиальных средств',
-      price: 'от 5 000 ₽',
+      title: 'Комплексная мойка',
+      description: 'Бережная двухфазная мойка с ручной сушкой и детейлингом',
+      price: 'от 3 500 ₽',
       icon: 'Car',
-      features: ['Бесконтактная мойка', 'Полировка кузова', 'Химчистка салона', 'Защитные покрытия']
+      features: ['Предварительная мойка', 'Контактная мойка', 'Очистка дисков', 'Сушка без разводов'],
+      popular: false
     },
     {
       title: 'Керамическое покрытие',
-      description: 'Долговременная защита лакокрасочного покрытия на 2-3 года',
-      price: 'от 15 000 ₽',
+      description: 'Защитное керамическое покрытие кузова на 2-5 лет',
+      price: 'от 25 000 ₽',
       icon: 'Shield',
-      features: ['Подготовка поверхности', 'Нанесение керамики', 'Гарантия 2 года', 'Гидрофобный эффект']
+      features: ['Полировка перед нанесением', 'Керамическое покрытие', 'Гарантия до 5 лет', 'Гидрофобный эффект'],
+      popular: true
     },
     {
-      title: 'Полировка и реставрация',
-      description: 'Устранение царапин, восстановление глубины цвета и блеска',
-      price: 'от 8 000 ₽',
-      icon: 'Gem',
-      features: ['Удаление дефектов', 'Многоэтапная полировка', 'Защитный воск', 'Восстановление блеска']
-    },
-    {
-      title: 'Химчистка салона',
-      description: 'Профессиональная очистка всех поверхностей интерьера автомобиля',
-      price: 'от 4 000 ₽',
-      icon: 'Sparkles',
-      features: ['Очистка сидений', 'Потолок и пластик', 'Антибактериальная обработка', 'Устранение запахов']
-    },
-    {
-      title: 'Предпродажная подготовка',
-      description: 'Комплексная подготовка автомобиля для максимальной стоимости при продаже',
+      title: 'Полировка кузова',
+      description: 'Восстановительная и защитная полировка с устранением дефектов',
       price: 'от 12 000 ₽',
-      icon: 'TrendingUp',
-      features: ['Полная мойка', 'Устранение дефектов', 'Детейлинг салона', 'Консультация по продаже']
+      icon: 'Gem',
+      features: ['Устранение царапин', 'Многоступенчатая полировка', 'Защитное покрытие', 'Восстановление блеска'],
+      popular: false
     },
     {
-      title: 'Защита от угона',
-      description: 'Установка сигнализаций, иммобилайзеров и GPS-трекеров',
-      price: 'от 20 000 ₽',
-      icon: 'Lock',
-      features: ['Современные системы', 'Скрытая установка', 'Мобильное приложение', 'Гарантия 3 года']
+      title: 'Детейлинг салона',
+      description: 'Глубокая чистка и восстановление всех поверхностей салона',
+      price: 'от 6 000 ₽',
+      icon: 'Sparkles',
+      features: ['Химчистка сидений', 'Очистка потолка', 'Антибактериальная обработка', 'Кондиционирование кожи'],
+      popular: false
+    },
+    {
+      title: 'PPF защитная пленка',
+      description: 'Полиуретановая пленка для защиты кузова от сколов и царапин',
+      price: 'от 35 000 ₽',
+      icon: 'ShieldCheck',
+      features: ['Защита от сколов', 'Самовосстановление', 'Прозрачность', 'Гарантия 7 лет'],
+      popular: true
+    },
+    {
+      title: 'Подготовка к продаже',
+      description: 'Комплексная подготовка автомобиля для продажи по максимальной цене',
+      price: 'от 15 000 ₽',
+      icon: 'TrendingUp',
+      features: ['Косметический ремонт', 'Полная мойка и детейлинг', 'Устранение дефектов', 'Фотосессия авто'],
+      popular: false
     }
   ];
 
@@ -61,11 +67,18 @@ const Services = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-[1.02]">
-              <CardHeader>
+            <Card key={index} className={`relative bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] ${service.popular ? 'ring-2 ring-gold-500/50' : ''}`}>
+              {service.popular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-gold-500 text-black font-montserrat font-semibold px-3 py-1">
+                    Популярная услуга
+                  </Badge>
+                </div>
+              )}
+              <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-2">
                   <Icon name={service.icon} className="h-8 w-8 text-primary" />
-                  <Badge variant="secondary" className="font-montserrat font-semibold">
+                  <Badge variant="secondary" className="font-montserrat font-semibold bg-gold-100 text-gold-800">
                     {service.price}
                   </Badge>
                 </div>
@@ -74,16 +87,16 @@ const Services = () => {
               </CardHeader>
               <CardContent>
                 <Separator className="mb-4" />
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center font-open-sans text-sm">
-                      <Icon name="Check" className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                      <Icon name="Check" className="h-4 w-4 text-gold-500 mr-2 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90">
-                  Подробнее
+                <Button className="w-full bg-gold-500 hover:bg-gold-600 text-black font-montserrat font-semibold">
+                  Записаться
                 </Button>
               </CardContent>
             </Card>
